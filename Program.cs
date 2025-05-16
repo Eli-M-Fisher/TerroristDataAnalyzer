@@ -42,7 +42,8 @@ class Program
             Console.WriteLine("3. Find the organization with the most members");
             Console.WriteLine("4. Find the organization with the least members");
             Console.WriteLine("5. Find the two closest terrorists");
-            Console.WriteLine("6. Exit");
+            Console.WriteLine("6. Search for a terrorist by name");
+            Console.WriteLine("7. Exit");
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
@@ -66,10 +67,13 @@ class Program
                     FindClosestTerroristPair(terrorists);
                     break;
                 case "6":
+                    SearchTerroristByName(terrorists);
+                    break;
+                case "7":
                     Console.WriteLine("Exiting the program. Goodbye!");
                     return;
                 default:
-                    Console.WriteLine("Invalid choice. Please enter 1, 2, 3, 4, 5, or 6.");
+                    Console.WriteLine("Invalid choice. Please enter 1, 2, 3, 4, 5, 6, or 7.");
                     break;
             }
         }
@@ -244,6 +248,33 @@ class Program
         else
         {
             Console.WriteLine("Not enough data to determine closest pair.");
+        }
+    }
+    static void SearchTerroristByName(List<Terrorist> terrorists)
+    {
+        Console.Write("Enter a name to search: ");
+        string input = Console.ReadLine()?.Trim().ToLower();
+
+        bool found = false;
+
+        foreach (var terrorist in terrorists)
+        {
+            if (terrorist.Name.ToLower().Contains(input))
+            {
+                found = true;
+                Console.WriteLine("Match found:");
+                Console.WriteLine($"Name: {terrorist.Name}");
+                Console.WriteLine($"Age: {terrorist.Age}");
+                Console.WriteLine($"Affiliation: {terrorist.Affiliation}");
+                Console.WriteLine($"Weapons: {string.Join(", ", terrorist.Weapons)}");
+                Console.WriteLine($"Location: ({terrorist.Latitude}, {terrorist.Longitude})");
+                Console.WriteLine();
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine("No terrorist found with the given name.");
         }
     }
 }

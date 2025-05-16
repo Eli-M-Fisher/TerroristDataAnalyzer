@@ -40,7 +40,8 @@ class Program
             Console.WriteLine("1. Find the most common weapon");
             Console.WriteLine("2. Find the least common weapon");
             Console.WriteLine("3. Find the organization with the most members");
-            Console.WriteLine("4. Exit");
+            Console.WriteLine("4. Find the organization with the least members");
+            Console.WriteLine("5. Exit");
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
@@ -58,10 +59,13 @@ class Program
                     FindOrgWithMostMembers(terrorists);
                     break;
                 case "4":
+                    FindOrgWithLeastMembers(terrorists);
+                    break;
+                case "5":
                     Console.WriteLine("Exiting the program. Goodbye!");
                     return;
                 default:
-                    Console.WriteLine("Invalid choice. Please enter 1, 2, 3, or 4.");
+                    Console.WriteLine("Invalid choice. Please enter 1, 2, 3, 4, or 5.");
                     break;
             }
         }
@@ -169,6 +173,33 @@ class Program
         else if (jihadCount > hamasCount)
         {
             Console.WriteLine($"The organization with the most members is: Islamic Jihad ({jihadCount} members)");
+        }
+        else
+        {
+            Console.WriteLine($"Both organizations have the same number of members ({hamasCount} each)");
+        }
+    }
+
+    static void FindOrgWithLeastMembers(List<Terrorist> terrorists)
+    {
+        int hamasCount = 0;
+        int jihadCount = 0;
+
+        foreach (var terrorist in terrorists)
+        {
+            if (terrorist.Affiliation == "Hamas")
+                hamasCount++;
+            else if (terrorist.Affiliation == "Islamic Jihad")
+                jihadCount++;
+        }
+
+        if (hamasCount < jihadCount)
+        {
+            Console.WriteLine($"The organization with the least members is: Hamas ({hamasCount} members)");
+        }
+        else if (jihadCount < hamasCount)
+        {
+            Console.WriteLine($"The organization with the least members is: Islamic Jihad ({jihadCount} members)");
         }
         else
         {

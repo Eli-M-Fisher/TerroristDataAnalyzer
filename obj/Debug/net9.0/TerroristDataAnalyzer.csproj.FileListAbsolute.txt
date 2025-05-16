@@ -1,0 +1,15 @@
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/bin/Debug/net9.0/TerroristDataAnalyzer
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/bin/Debug/net9.0/TerroristDataAnalyzer.deps.json
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/bin/Debug/net9.0/TerroristDataAnalyzer.runtimeconfig.json
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/bin/Debug/net9.0/TerroristDataAnalyzer.dll
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/bin/Debug/net9.0/TerroristDataAnalyzer.pdb
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.AssemblyInfoInputs.cache
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.AssemblyInfo.cs
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.csproj.CoreCompileInputs.cache
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.sourcelink.json
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.dll
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/refint/TerroristDataAnalyzer.dll
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.pdb
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/TerroristDataAnalyzer.genruntimeconfig.cache
+/Users/elifisher/Documents/Lessons_and_Courses/Programming/C# Kodcode/Practice/Projects/TerroristDataAnalyzer/obj/Debug/net9.0/ref/TerroristDataAnalyzer.dll

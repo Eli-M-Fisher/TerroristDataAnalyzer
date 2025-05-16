@@ -32,5 +32,46 @@ class Program
 
         // Quick check
         Console.WriteLine($"Total terrorists loaded: {terrorists.Count}");
+
+        while (true)
+        {
+            Console.WriteLine();
+            Console.WriteLine("==== Terrorist Data Analyzer ====");
+            Console.WriteLine("1. Find the most common weapon");
+            Console.WriteLine("2. Find the least common weapon");
+            Console.WriteLine("3. Find the organization with the most members");
+            Console.WriteLine("4. Find the organization with the least members");
+            Console.WriteLine("5. Find the two closest terrorists");
+            Console.WriteLine("6. Exit");
+            Console.Write("Enter your choice: ");
+            string choice = Console.ReadLine();
+
+            Console.WriteLine(); // spacer
+
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine("Finding the most common weapon... (Not implemented yet)");
+                    break;
+                case "2":
+                    Console.WriteLine("Finding the least common weapon... (Not implemented yet)");
+                    break;
+                case "3":
+                    Console.WriteLine("Finding the organization with the most members... (Not implemented yet)");
+                    break;
+                case "4":
+                    Console.WriteLine("Finding the organization with the least members... (Not implemented yet)");
+                    break;
+                case "5":
+                    Console.WriteLine("Finding the two closest terrorists... (Not implemented yet)");
+                    break;
+                case "6":
+                    Console.WriteLine("Exiting the program. Goodbye!");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Please enter a number between 1 and 6.");
+                    break;
+            }
+        }
     }
 }

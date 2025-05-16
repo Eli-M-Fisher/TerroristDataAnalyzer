@@ -38,7 +38,8 @@ class Program
             Console.WriteLine();
             Console.WriteLine("==== Terrorist Data Analyzer ====");
             Console.WriteLine("1. Find the most common weapon");
-            Console.WriteLine("2. Exit");
+            Console.WriteLine("2. Find the least common weapon");
+            Console.WriteLine("3. Exit");
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
@@ -50,10 +51,13 @@ class Program
                     FindMostCommonWeapon(terrorists);
                     break;
                 case "2":
+                    FindLeastCommonWeapon(terrorists);
+                    break;
+                case "3":
                     Console.WriteLine("Exiting the program. Goodbye!");
                     return;
                 default:
-                    Console.WriteLine("Invalid choice. Please enter 1 or 2.");
+                    Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
                     break;
             }
         }
@@ -93,6 +97,47 @@ class Program
         if (mostCommonWeapon != null)
         {
             Console.WriteLine($"Most common weapon is: {mostCommonWeapon} ({maxCount} times)");
+        }
+        else
+        {
+            Console.WriteLine("No weapons found.");
+        }
+    }
+
+    static void FindLeastCommonWeapon(List<Terrorist> terrorists)
+    {
+        Dictionary<string, int> weaponCounts = new Dictionary<string, int>();
+
+        foreach (var terrorist in terrorists)
+        {
+            foreach (var weapon in terrorist.Weapons)
+            {
+                if (weaponCounts.ContainsKey(weapon))
+                {
+                    weaponCounts[weapon]++;
+                }
+                else
+                {
+                    weaponCounts[weapon] = 1;
+                }
+            }
+        }
+
+        string leastCommonWeapon = null;
+        int minCount = int.MaxValue;
+
+        foreach (var pair in weaponCounts)
+        {
+            if (pair.Value < minCount)
+            {
+                leastCommonWeapon = pair.Key;
+                minCount = pair.Value;
+            }
+        }
+
+        if (leastCommonWeapon != null)
+        {
+            Console.WriteLine($"Least common weapon is: {leastCommonWeapon} ({minCount} times)");
         }
         else
         {

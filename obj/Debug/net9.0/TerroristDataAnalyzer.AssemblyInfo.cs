@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TerroristDataAnalyzer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f12955575f95f3083053efac33167b7fa1387763")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+437fb72cf93959cb5cf193a957006b412c85fb5d")]
 [assembly: System.Reflection.AssemblyProductAttribute("TerroristDataAnalyzer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TerroristDataAnalyzer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

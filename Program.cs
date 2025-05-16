@@ -39,7 +39,8 @@ class Program
             Console.WriteLine("==== Terrorist Data Analyzer ====");
             Console.WriteLine("1. Find the most common weapon");
             Console.WriteLine("2. Find the least common weapon");
-            Console.WriteLine("3. Exit");
+            Console.WriteLine("3. Find the organization with the most members");
+            Console.WriteLine("4. Exit");
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
@@ -54,10 +55,13 @@ class Program
                     FindLeastCommonWeapon(terrorists);
                     break;
                 case "3":
+                    FindOrgWithMostMembers(terrorists);
+                    break;
+                case "4":
                     Console.WriteLine("Exiting the program. Goodbye!");
                     return;
                 default:
-                    Console.WriteLine("Invalid choice. Please enter 1, 2, or 3.");
+                    Console.WriteLine("Invalid choice. Please enter 1, 2, 3, or 4.");
                     break;
             }
         }
@@ -142,6 +146,33 @@ class Program
         else
         {
             Console.WriteLine("No weapons found.");
+        }
+    }
+
+    static void FindOrgWithMostMembers(List<Terrorist> terrorists)
+    {
+        int hamasCount = 0;
+        int jihadCount = 0;
+
+        foreach (var terrorist in terrorists)
+        {
+            if (terrorist.Affiliation == "Hamas")
+                hamasCount++;
+            else if (terrorist.Affiliation == "Islamic Jihad")
+                jihadCount++;
+        }
+
+        if (hamasCount > jihadCount)
+        {
+            Console.WriteLine($"The organization with the most members is: Hamas ({hamasCount} members)");
+        }
+        else if (jihadCount > hamasCount)
+        {
+            Console.WriteLine($"The organization with the most members is: Islamic Jihad ({jihadCount} members)");
+        }
+        else
+        {
+            Console.WriteLine($"Both organizations have the same number of members ({hamasCount} each)");
         }
     }
 }

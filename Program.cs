@@ -41,7 +41,8 @@ class Program
             Console.WriteLine("2. Find the least common weapon");
             Console.WriteLine("3. Find the organization with the most members");
             Console.WriteLine("4. Find the organization with the least members");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("5. Find the two closest terrorists");
+            Console.WriteLine("6. Exit");
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
@@ -62,10 +63,13 @@ class Program
                     FindOrgWithLeastMembers(terrorists);
                     break;
                 case "5":
+                    FindClosestTerroristPair(terrorists);
+                    break;
+                case "6":
                     Console.WriteLine("Exiting the program. Goodbye!");
                     return;
                 default:
-                    Console.WriteLine("Invalid choice. Please enter 1, 2, 3, 4, or 5.");
+                    Console.WriteLine("Invalid choice. Please enter 1, 2, 3, 4, 5, or 6.");
                     break;
             }
         }
@@ -204,6 +208,42 @@ class Program
         else
         {
             Console.WriteLine($"Both organizations have the same number of members ({hamasCount} each)");
+        }
+    }
+    static void FindClosestTerroristPair(List<Terrorist> terrorists)
+    {
+        double minDistance = double.MaxValue;
+        Terrorist first = null;
+        Terrorist second = null;
+
+        for (int i = 0; i < terrorists.Count; i++)
+        {
+            for (int j = i + 1; j < terrorists.Count; j++)
+            {
+                double distance = Math.Sqrt(
+                    Math.Pow(terrorists[i].Latitude - terrorists[j].Latitude, 2) +
+                    Math.Pow(terrorists[i].Longitude - terrorists[j].Longitude, 2)
+                );
+
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    first = terrorists[i];
+                    second = terrorists[j];
+                }
+            }
+        }
+
+        if (first != null && second != null)
+        {
+            Console.WriteLine("The two closest terrorists are:");
+            Console.WriteLine($"- {first.Name}");
+            Console.WriteLine($"- {second.Name}");
+            Console.WriteLine($"Distance: {minDistance:F2}");
+        }
+        else
+        {
+            Console.WriteLine("Not enough data to determine closest pair.");
         }
     }
 }
